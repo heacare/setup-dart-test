@@ -1,0 +1,19 @@
+name: Dart CI
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cached:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: heacare/setup-dart@add-caching
+        with:
+          sdk: stable
+  not-cached:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: heacare/setup-dart@add-matcher
+        with:
+          sdk: stable
