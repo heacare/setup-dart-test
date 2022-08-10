@@ -10,10 +10,12 @@ jobs:
     steps:
       - uses: heacare/setup-dart@add-caching
         with:
-          sdk: stable
+          sdk: 2.17.6
+          cache: true
   not-cached:
     runs-on: ubuntu-latest
     steps:
-      - uses: heacare/setup-dart@add-matcher
+      - uses: heacare/setup-dart@add-caching
         with:
-          sdk: stable
+          sdk: 2.17.6
+          cache: false
